@@ -36,6 +36,7 @@ public enum EnumExceptions {
 			EnumMessages.ILL_STATE.handle(log, e);
 			break;
 		case IO:
+			System.err.println(name);
 			EnumMessages.IO.handle(log, e);
 			break;
 		case NULL_POINT:
@@ -48,7 +49,7 @@ public enum EnumExceptions {
 		}
 	}
 
-	enum EnumClass {
+	public enum EnumClass {
 		CLASS_CAST(ClassCastException.class.getSimpleName()),
 		FILE_NOT_FOUND(FileNotFoundException.class.getSimpleName()),
 		IDX_OUT_BOUNDS(IndexOutOfBoundsException.class.getSimpleName()),

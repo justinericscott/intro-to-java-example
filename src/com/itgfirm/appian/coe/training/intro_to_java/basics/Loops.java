@@ -18,48 +18,59 @@ public class Loops {
 		list.add(1);
 	}
 
-	public void forLoop() {
-		for (int i = 0; list.size() < i; i++) {
-			LOG.info("INDEX: " + i + " | VALUE: " + list.get(i));
+	public Integer forLoop() {
+		Integer val = null;
+		for (int i = 0; list.size() > i; i++) {
+			val = list.get(i);
+			LOG.info("INDEX: " + i + " | VALUE: " + val);
 		}
+		return val;
 	}
 
-	public void forEnhancedLoop() {
+	public Integer forEnhancedLoop() {
+		Integer val = null;
 		int i = 0;
 		for (final Integer num : list) {
+			val = num;
 			LOG.info("INDEX: " + i + " | VALUE: " + num);
 			i++;
 		}
+		return val;
 	}
 	
-	public void forEachLoop() {
+	public Integer forEachLoop() {
 		list.forEach(num -> {
 			LOG.info("INDEX: UNKNOWN | VALUE: " + num);
 		});
+		return 1;
 	}
 	
-	public void whileLoop() {
+	public Integer whileLoop() {
+		Integer val = null;
 		final Iterator<Integer> iter = list.iterator();
 		int i = 0;
 		while (iter.hasNext()) {
-			final Integer num = iter.next(); 
-			LOG.info("INDEX: " + i + " | VALUE: " + num);
+			val = iter.next(); 
+			LOG.info("INDEX: " + i + " | VALUE: " + val);
 			i++;			
 		}
+		return val;
 	}
 	
-	public void doWhileLoop() {
+	public Integer doWhileLoop() {
+		Integer val = null;
 		final Iterator<Integer> iter = list.iterator();
 		boolean flag = true;
 		int i = 0;
 		do {
 			if (iter.hasNext()) {
-				Integer num = iter.next();
-				LOG.info("INDEX: " + i + " | VALUE: " + num);
+				val = iter.next();
+				LOG.info("INDEX: " + i + " | VALUE: " + val);
 				i++;
 			} else {
 				flag = false;
 			}
 		} while (flag);
+		return val;
 	}
 }

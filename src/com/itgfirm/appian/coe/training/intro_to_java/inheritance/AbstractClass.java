@@ -1,4 +1,4 @@
-package com.itgfirm.appian.coe.training.intro_to_java.services;
+package com.itgfirm.appian.coe.training.intro_to_java.inheritance;
 
 import java.util.Collection;
 import java.util.HashMap;
